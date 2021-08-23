@@ -1,4 +1,4 @@
-name: hugo1-workflow
+name: hugo-workflow
 
 on:
   push:
