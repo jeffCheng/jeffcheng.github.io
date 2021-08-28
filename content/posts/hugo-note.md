@@ -9,20 +9,26 @@ draft: false
 
 Hugo command line to make a new post.
 
-``` hugo new posts/hugo-note.md```
+``` 
+hugo new posts/hugo-note.md
+```
 
 Run the local testing enviroment. 
 
-```hugo server -D```
+```
+hugo server -D
+```
 
 Run the deployable files
 
-```hugo -D```
-
+```
+hugo -D
+```
 
 ```
 git add .  
-
+git commit -m"hugo note"
+git push
 ```
 
 ![Example image](/img/life.png)
