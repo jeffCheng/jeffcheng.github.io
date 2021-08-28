@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on My Blog</title><link>https://jeffcheng.github.io/posts/</link><description>Recent content in Posts on My Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 22 Aug 2021 16:55:04 +0800</lastBuildDate><atom:link href="https://jeffcheng.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>測試測試</title><link>https://jeffcheng.github.io/posts/test/</link><pubDate>Sun, 22 Aug 2021 16:55:04 +0800</pubDate><guid>https://jeffcheng.github.io/posts/test/</guid><description>Hello world 我在2021-08-22建立了第一篇文章。</description></item><item><title>Love Poem</title><link>https://jeffcheng.github.io/posts/love-poem/</link><pubDate>Sun, 22 Aug 2021 16:50:59 +0800</pubDate><guid>https://jeffcheng.github.io/posts/love-poem/</guid><description>Love Poem I stand with you.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on My Blog</title><link>https://jeffcheng.github.io/posts/</link><description>Recent content in Posts on My Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 28 Aug 2021 22:41:27 +0800</lastBuildDate><atom:link href="https://jeffcheng.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo Note</title><link>https://jeffcheng.github.io/posts/hugo-note/</link><pubDate>Sat, 28 Aug 2021 22:41:27 +0800</pubDate><guid>https://jeffcheng.github.io/posts/hugo-note/</guid><description>Command Line Makedown Cheetsheet
+Hugo command line to make a new post.
+hugo new posts/hugo-note.md
+Run the local testing enviroment.
+hugo server -D
+Run the deployable files
+hugo -D
+git add .</description></item><item><title>測試測試</title><link>https://jeffcheng.github.io/posts/test/</link><pubDate>Sun, 22 Aug 2021 16:55:04 +0800</pubDate><guid>https://jeffcheng.github.io/posts/test/</guid><description>Hello world 我在2021-08-22建立了第一篇文章。</description></item><item><title>Poem</title><link>https://jeffcheng.github.io/posts/poem/</link><pubDate>Sun, 22 Aug 2021 16:50:59 +0800</pubDate><guid>https://jeffcheng.github.io/posts/poem/</guid><description>Love Poem I stand with you.
 Leave fall down but spring.
 Oh, your beauty is so full that.
 Vanity would never seize you.
