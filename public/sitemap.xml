@@ -2,11 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://jeffcheng.github.io/posts/hugo-note/</loc>
+    <lastmod>2021-08-28T22:41:27+08:00</lastmod>
+  </url><url>
     <loc>https://jeffcheng.github.io/</loc>
-    <lastmod>2021-08-22T16:55:04+08:00</lastmod>
+    <lastmod>2021-08-28T22:41:27+08:00</lastmod>
   </url><url>
     <loc>https://jeffcheng.github.io/posts/</loc>
-    <lastmod>2021-08-22T16:55:04+08:00</lastmod>
+    <lastmod>2021-08-28T22:41:27+08:00</lastmod>
   </url><url>
     <loc>https://jeffcheng.github.io/posts/test/</loc>
     <lastmod>2021-08-22T16:55:04+08:00</lastmod>
@@ -14,7 +17,7 @@
     <loc>https://jeffcheng.github.io/about/</loc>
     <lastmod>2021-08-22T16:50:59+08:00</lastmod>
   </url><url>
-    <loc>https://jeffcheng.github.io/posts/love-poem/</loc>
+    <loc>https://jeffcheng.github.io/posts/poem/</loc>
     <lastmod>2021-08-22T16:50:59+08:00</lastmod>
   </url><url>
     <loc>https://jeffcheng.github.io/categories/</loc>
