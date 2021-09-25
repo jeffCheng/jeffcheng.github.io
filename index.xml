@@ -2,14 +2,4 @@
 Hugo command line to make a new post.
 hugo new posts/hugo-note.md Run the local testing enviroment.
 hugo server -D Run the deployable files
-hugo -D git add . git commit -m&amp;quot;hugo note&amp;quot; git push</description></item><item><title>測試測試</title><link>https://jeffcheng.github.io/posts/test/</link><pubDate>Sun, 22 Aug 2021 16:55:04 +0800</pubDate><guid>https://jeffcheng.github.io/posts/test/</guid><description>Hello world 我在2021-08-22建立了第一篇文章。
-title: &amp;ldquo;Happy Birthday Winny&amp;rdquo; date: 2021-10-02T10:50:59+08:00 draft: false Love Story 很開心跟你與你一起相處的日子:heart:\ 從 2020/11/21 認識你到現在 315天 的日子\ 希望我們的之後的生活都有彼此。 Happy Birthday!! I stand with you.
-Leave fall down but spring.
-Oh, your beauty is so full that.
-Vanity would never seize you.
-Everywhere can feel happiness
-Until the sun bring another wind.
-Watch you sleep and
-I don&amp;rsquo;t ever wanna leave.
-Now and never, I love you.
-Now I think it&amp;rsquo;s time to say:</description></item></channel></rss>
+hugo -D git add . git commit -m&amp;quot;hugo note&amp;quot; git push</description></item><item><title>測試測試</title><link>https://jeffcheng.github.io/posts/test/</link><pubDate>Sun, 22 Aug 2021 16:55:04 +0800</pubDate><guid>https://jeffcheng.github.io/posts/test/</guid><description>Hello world 我在2021-08-22建立了第一篇文章。</description></item></channel></rss>
