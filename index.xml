@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My Blog</title><link>https://jeffcheng.github.io/</link><description>Recent content on My Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 28 Aug 2021 22:41:27 +0800</lastBuildDate><atom:link href="https://jeffcheng.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo Note</title><link>https://jeffcheng.github.io/posts/hugo-note/</link><pubDate>Sat, 28 Aug 2021 22:41:27 +0800</pubDate><guid>https://jeffcheng.github.io/posts/hugo-note/</guid><description>Command Line Makedown Cheetsheet
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My Blog</title><link>https://jeffcheng.github.io/</link><description>Recent content on My Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 25 Sep 2021 10:50:59 +0800</lastBuildDate><atom:link href="https://jeffcheng.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Happy Birthday Winny</title><link>https://jeffcheng.github.io/posts/winny/</link><pubDate>Sat, 25 Sep 2021 10:50:59 +0800</pubDate><guid>https://jeffcheng.github.io/posts/winny/</guid><description>Love Story 很開心跟你與你一起相處的日子(heart) 從 2020/11/21 認識你到現在 315天 的日子 希望我們的之後的生活都有彼此。 Happy Birthday!! I stand with you.
+Leave fall down but spring.
+Oh, your beauty is so full that.
+Vanity would never seize you.
+Everywhere can feel happiness
+Until the sun bring another wind.
+Watch you sleep and
+I don&amp;rsquo;t ever wanna leave.
+Now and never, I love you.
+Now I think it&amp;rsquo;s time to say:
+You and I will travel far together until forever.</description></item><item><title>Hugo Note</title><link>https://jeffcheng.github.io/posts/hugo-note/</link><pubDate>Sat, 28 Aug 2021 22:41:27 +0800</pubDate><guid>https://jeffcheng.github.io/posts/hugo-note/</guid><description>Command Line Makedown Cheetsheet
 Hugo command line to make a new post.
 hugo new posts/hugo-note.md Run the local testing enviroment.
 hugo server -D Run the deployable files
