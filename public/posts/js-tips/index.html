@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+		
+		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>[Javascript] var, let, const, null, undefined, pass by value, pass by reference &middot; My Blog</title>
+
+		
+		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/fonts.css">
+		<link rel="stylesheet" href="/custom.css">
+		
+		<link rel="icon" href="favicon.ico" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="My Blog" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">My Blog</h2>
+				</a>
+				<ul>
+    
+    
+        <li>
+            <a href="/about/">
+                
+                <span>About</span>
+                
+            </a>
+        </li>
+    
+        <li>
+            <a href="/posts/">
+                
+                <span>Posts</span>
+                
+            </a>
+        </li>
+    
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        H.T.Cheng
+        <br>
+        <span>on&nbsp;</span><time datetime="2021-10-11 16:33:26 &#43;0800 CST">October 11, 2021</time>
+</div>
+
+		<h1 class="post-title">[Javascript] var, let, const, null, undefined, pass by value, pass by reference</h1>
+<div class="post-line"></div>
+
+		
+
+		<h2 id="1-var-let-and--const">1. var, let and , const？</h2>
+<p><code>var</code>, <code>let</code> and <code>const</code> are very common to use in JavaScript programming. Especially, in Javascript&rsquo;s new feature ES2016.</p>
+<h2 id="let"><code>Let</code></h2>
+<p>The let statement declares a <em>block-scoped local variable</em>, optionally initializing it to a value.</p>
+<h3 id="what-is-a-block-scoped">What is a Block-scoped?</h3>
+<p>Before ES6 (2015), JavaScript had only <em>Global Scope</em> and <em>Function Scope</em>.</p>
+<p>ES6 introduced two important new JavaScript keywords: <code>let</code> and <code>const</code>.</p>
+<p>These two keywords provide <strong>Block Scope</strong> in JavaScript.</p>
+<p>Variables declared inside a <code>{ }</code> block cannot be accessed from outside the block:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">
+
+{
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+}
+<span style="color:#75715e">// x can NOT be used here
+</span><span style="color:#75715e"></span>
+
+</code></pre></div><p><code>let</code> allows you to declare variables that are limited to the scope of a block statement, or expression on which it is used, unlike the <code>var</code> keyword, which declares a variable <em>globally</em>, or <em>locally</em> to an entire function regardless of block scope.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">varTest() {</span>
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+  {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;  <span style="color:#75715e">// same variable!
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span>);  <span style="color:#75715e">// 3
+</span><span style="color:#75715e"></span>  }
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span>);  <span style="color:#75715e">// 3
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">letTest() {</span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+  {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;  <span style="color:#75715e">// different variable
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span>);  <span style="color:#75715e">// 3
+</span><span style="color:#75715e"></span>  }
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span>);  <span style="color:#75715e">// 2
+</span><span style="color:#75715e"></span>}
+
+
+</code></pre></div><p>At the top level of programs and functions, let, unlike var, does not create a property on the global object. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;global&#39;</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;global&#39;</span>;
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span>); <span style="color:#75715e">// &#34;global&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span>); <span style="color:#75715e">// undefined
+</span><span style="color:#75715e"></span>
+
+</code></pre></div><h2 id="const"><code>Const</code></h2>
+<p>Constants are <em>block-scoped</em>, much like variables declared using the let keyword. The value of a constant can&rsquo;t be changed through reassignment, and it can&rsquo;t be redeclared.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx">
+
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>;
+
+<span style="color:#66d9ef">try</span> {
+  <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">99</span>;
+} <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">err</span>);
+  <span style="color:#75715e">// expected output: TypeError: invalid assignment to const `number&#39;
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// Note - error messages will vary depending on browser
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">number</span>);
+<span style="color:#75715e">// expected output: 42
+</span><span style="color:#75715e"></span>
+
+</code></pre></div><p>The const declaration creates a read-only reference to a value. It does not mean the value it holds is immutable—just that the variable identifier <em>cannot be reassigned</em>. For instance, in the case where the content is an object, this means the object&rsquo;s contents (e.g., its properties) can be altered.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">
+
+<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">MY_FAV</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">7</span>) {
+  <span style="color:#75715e">// this is fine and creates a block scoped MY_FAV variable
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// (works equally well with let to declare a block scoped non const variable)
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">MY_FAV</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
+
+  <span style="color:#75715e">// MY_FAV is now 20
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;my favorite number is &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">MY_FAV</span>);
+
+  <span style="color:#75715e">// this gets hoisted into the global context and throws an error
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">MY_FAV</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
+}
+
+<span style="color:#75715e">// MY_FAV is still 7
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;my favorite number is &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">MY_FAV</span>);
+
+
+</code></pre></div><h3 id="const-needs-to-be-initialized"><code>const</code> needs to be initialized</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">
+
+<span style="color:#75715e">// throws an error
+</span><span style="color:#75715e">// Uncaught SyntaxError: Missing initializer in const declaration
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">FOO</span>;
+
+
+</code></pre></div><h3 id="scope-of-var">Scope of var:</h3>
+<p><code>var</code> declarations are globally scoped or function locally. The default value is undefined.
+<code>var</code> declarations, wherever they occur, are processed before any code is executed. This is called hoisting and is discussed further below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+
+<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">x</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span>);
+  <span style="color:#75715e">// expected output: 2
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span>);
+<span style="color:#75715e">// expected output: 2
+</span><span style="color:#75715e"></span>
+
+</code></pre></div><h2 id="var"><code>Var</code></h2>
+<p>The var statement declares a <em>function-scoped or globally-scoped</em> variable, optionally initializing it to a value.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+
+<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">x</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span>);
+  <span style="color:#75715e">// expected output: 2
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span>);
+<span style="color:#75715e">// expected output: 2
+</span><span style="color:#75715e"></span>
+
+</code></pre></div><p><code>var</code> declarations, wherever they occur, are processed before any code is executed. This is called <em>hoisting</em>, and is discussed further below.</p>
+<p>The scope of a variable declared with <code>var</code> is its current <em>execution context and closures thereof</em>, which is either the enclosing function and functions declared within it, or, for variables declared outside any function, global. Duplicate variable declarations using <code>var</code> will not trigger an error, even in strict mode, and the variable will not lose its value, unless another assignment is performed.</p>
+<p>Variables declared using var are created before any code is executed in a process known as hoisting. Their initial value is undefined.</p>
+<h3 id="var-problem"><code>var</code> problem:</h3>
+<p><code>var</code> problems can be declared repeatedly, which is easy to cause confusion
+Leaving the scope of <code>{}</code>, you can still get the value of var i</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt;<span style="color:#f92672">10</span> <span style="color:#960050;background-color:#1e0010">;</span> <span style="color:#a6e22e">i</span><span style="color:#960050;background-color:#1e0010">++)</span> {
+    <span style="color:#a6e22e">console.log</span><span style="color:#960050;background-color:#1e0010">(&#39;</span><span style="color:#a6e22e">hello</span><span style="color:#960050;background-color:#1e0010">&#39;);</span>
+}
+<span style="color:#a6e22e">console.log</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">i</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#a6e22e">5</span>
+
+</code></pre></div><h2 id="2-pass-by-value-and-pass-by-reference-in-javascript">2. Pass by Value and Pass by Reference in Javascript</h2>
+<p>Pass By Value: In Pass by value, function is called by directly passing the value of the variable as an argument. So any changes made inside the function does not affect the original value.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Passbyvalue</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tmp</span>;
+    <span style="color:#a6e22e">tmp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">b</span>;
+    <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>;
+    <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">tmp</span>;
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Inside Pass by value 
+</span><span style="color:#e6db74">        function -&gt; a = </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">a</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> b = </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">b</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+}
+  
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Before calling Pass by value 
+</span><span style="color:#e6db74">        Function -&gt; a = </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">a</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> b = </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">b</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+  
+<span style="color:#a6e22e">Passbyvalue</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>);
+  
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`After calling Pass by value 
+</span><span style="color:#e6db74">       Function -&gt; a =</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">a</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> b = </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">b</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+
+</code></pre></div><p><strong>Pass by Reference:</strong> In Pass by Reference, Function is called by directly passing the reference/address of the variable as an argument. So changing the value inside the function also change the original value. In JavaScript <strong>array and Object</strong> follows pass by reference property.</p>
+<p>In Pass by reference, parameters passed as an arguments does not create its own copy, it refers to the original value so changes made inside function affect the original value.</p>
+<p>Note: In Pass by Reference, we are mutating the original value. when we pass an object as an arguments and update that object’s reference in the function’s context, that won’t affect the object value. But if we mutate the object internally, It will affect the object .</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">PassbyReference</span>(<span style="color:#a6e22e">obj</span>) {
+  
+    <span style="color:#75715e">// Changing the reference of the object
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+        <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
+        <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span>,
+        <span style="color:#a6e22e">c</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;BEST&#34;</span>
+    }
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Inside Pass by 
+</span><span style="color:#e6db74">        Reference Function -&gt; obj `</span>);
+          
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span>);
+}
+  
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
+    <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span>
+  
+}
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Updating the object reference -&gt; `</span>)
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Before calling Pass By 
+</span><span style="color:#e6db74">        Reference Function -&gt; obj`</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span>);
+  
+<span style="color:#a6e22e">PassbyReference</span>(<span style="color:#a6e22e">obj</span>)
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`After calling Pass By 
+</span><span style="color:#e6db74">        Reference Function -&gt; obj`</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span>);
+
+</code></pre></div><h2 id="3-the-difference-between-undefined-and-null">3. The difference between undefined and null</h2>
+<h3 id="undefined">undefined</h3>
+<p>The global undefined property represents the primitive value undefined. It is one of JavaScript&rsquo;s primitive types.</p>
+<h3 id="null">null</h3>
+<p>The value null is written with a literal: null. null is not an identifier for a property of the global object, like undefined can be. Instead, null expresses a lack of identification, indicating that a variable points to no object. In APIs, null is often retrieved in a place where an object can be expected but no object is relevant.</p>
+<ul>
+<li><strong>Null:</strong> It is the intentional absence of the value. It is one of the primitive values of JavaScript.</li>
+<li><strong>Undefined:</strong> It means the value does not exist in the compiler. It is the global object.</li>
+</ul>
+<p><strong>Type:</strong></p>
+<p><strong>Null:</strong> Object</p>
+<p><strong>Undefined:</strong> undefined</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">
+<span style="color:#66d9ef">null</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span> <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">null</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span> <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span>
+</code></pre></div><p>When we define a variable to <em>undefined</em> then we are trying to convey that the variable does not exist .When we define a variable to <em>null</em> then we are trying to convey that the variable is empty.</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><strong>Null:</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">
+<span style="color:#66d9ef">null</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;true&#34;</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;false&#34;</span>) <span style="color:#75715e">// false 
+</span><span style="color:#75715e"></span>
+</code></pre></div><p><em>Null</em> is also referred as <em>false</em>.</p>
+<ul>
+<li><strong>Undefined:</strong> When variable is not assigned a value</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">temp</span>;
+<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">temp</span> <span style="color:#f92672">===</span><span style="color:#66d9ef">undefined</span>)
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;true&#34;</span>);
+<span style="color:#66d9ef">else</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;false&#34;</span>); 
+
+</code></pre></div><p><strong>Output:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">
+<span style="color:#66d9ef">true</span>
+
+</code></pre></div><p>Accessing values which does not exist</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">temp</span><span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;a&#39;</span>,<span style="color:#e6db74">&#39;b&#39;</span>,<span style="color:#e6db74">&#39;c&#39;</span>];
+<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">temp</span>[<span style="color:#ae81ff">3</span>] <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>)
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;true&#34;</span>);
+        <span style="color:#66d9ef">else</span>
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;false&#34;</span>);
+
+</code></pre></div><p><strong>Output:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">
+<span style="color:#66d9ef">true</span>
+
+</code></pre></div><p>Resources:</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const</a></p>
+<p><a href="https://www.w3schools.com/js/js_scope.asp">https://www.w3schools.com/js/js_scope.asp</a></p>
+<p><a href="https://medium.com/@allansendagi/block-scope-in-javascript-8fd2f909e848">https://medium.com/@allansendagi/block-scope-in-javascript-8fd2f909e848</a></p>
+<p><a href="https://www.geeksforgeeks.org/undefined-vs-null-in-javascript/">https://www.geeksforgeeks.org/undefined-vs-null-in-javascript/</a></p>
+<p><a href="https://www.geeksforgeeks.org/pass-by-value-and-pass-by-reference-in-javascript/">https://www.geeksforgeeks.org/pass-by-value-and-pass-by-reference-in-javascript/</a></p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/posts/winny/" class="left arrow">&#8592;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			
+			<span>
+			&copy; <time datetime="2021-10-11 16:42:08.844344 &#43;0800 CST m=&#43;0.167226431">2021</time> H.T.Cheng. Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>

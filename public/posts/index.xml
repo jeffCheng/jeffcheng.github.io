@@ -6,7 +6,20 @@
     <description>Recent content in Posts on My Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Sep 2021 10:50:59 +0800</lastBuildDate><atom:link href="https://jeffcheng.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Oct 2021 16:33:26 +0800</lastBuildDate><atom:link href="https://jeffcheng.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Javascript] var, let, const, null, undefined, pass by value, pass by reference</title>
+      <link>https://jeffcheng.github.io/posts/js-tips/</link>
+      <pubDate>Mon, 11 Oct 2021 16:33:26 +0800</pubDate>
+      
+      <guid>https://jeffcheng.github.io/posts/js-tips/</guid>
+      <description>1. var, let and , const？ var, let and const are very common to use in JavaScript programming. Especially, in Javascript&amp;rsquo;s new feature ES2016.
+Let The let statement declares a block-scoped local variable, optionally initializing it to a value.
+What is a Block-scoped? Before ES6 (2015), JavaScript had only Global Scope and Function Scope.
+ES6 introduced two important new JavaScript keywords: let and const.
+These two keywords provide Block Scope in JavaScript.</description>
+    </item>
+    
     <item>
       <title>Happy Birthday Winny</title>
       <link>https://jeffcheng.github.io/posts/winny/</link>
